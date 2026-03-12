@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beli Insights</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #134F5C;
+    --teal-light: rgba(19, 79, 92, 0.07);
+    --teal-mid: rgba(19, 79, 92, 0.35);
+    --gold: #EBC560;
+    --gold-soft: rgba(235, 197, 96, 0.12);
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+    --white-soft: #FAFAFA;
+    --grey: #888888;
+    --grey-light: #C8C8C8;
+    --grey-faint: #E8E8E8;
+    --rule: #E2E2E2;
+    --positive: #3A7D5C;
+    --negative: #A0413A;
+    --neutral: #999999;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  /* ── Sections ────────────────────────────────────── */
+  section {
+    padding: 80px 0 0;
+  }
+  section:last-of-type {
+    padding-bottom: 80px;
+  }
+
+  .section-rule {
+    border: none; border-top: 1px solid var(--rule);
+    margin: 0 0 56px;
+  }
+
+  .section-label {
+    font-size: 11px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.18em; color: var(--grey);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 42px; font-weight: 400; line-height: 1.15;
+    letter-spacing: -0.01em; color: var(--black);
+    margin-bottom: 20px;
+    max-width: 640px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 28px; font-weight: 400; line-height: 1.25;
+    letter-spacing: -0.005em; color: var(--black);
+    margin-bottom: 36px;
+  }
+
+  h3 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 20px; font-weight: 400; line-height: 1.3;
+    color: var(--black); margin-bottom: 12px;
+  }
+
+  .subtitle {
+    font-size: 15px; color: var(--grey); max-width: 520px;
+    line-height: 1.65; margin-bottom: 48px;
+  }
+
+  /* ── Stats ───────────────────────────────────────── */
+  .stats-row {
+    display: flex; gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0;
+  }
+  .stat {
+    flex: 1; padding: 36px 0;
+    border-right: 1px solid var(--rule);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-value {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 40px; line-height: 1; color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--grey); font-weight: 500;
+  }
+  .stat-sub {
+    font-size: 12px; color: var(--grey-light); margin-top: 4px;
+  }
+  @media (max-width: 700px) {
+    .stats-row { flex-wrap: wrap; }
+    .stat { flex: 1 1 50%; border-bottom: 1px solid var(--rule); }
+    .stat:nth-child(even) { border-right: none; }
+  }
+
+  /* ── Two-column editorial ────────────────────────── */
+  .col-layout {
+    display: grid; grid-template-columns: 5fr 3fr; gap: 72px;
+    align-items: start;
+  }
+  .col-layout.wide-right {
+    grid-template-columns: 3fr 5fr;
+  }
+  @media (max-width: 860px) {
+    .col-layout, .col-layout.wide-right { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* ── UMAP Scatter ────────────────────────────────── */
+  .scatter-container {
+    position: relative; width: 100%; height: 520px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: var(--white-soft);
+    overflow: hidden;
+  }
+  .scatter-canvas { width: 100%; height: 100%; cursor: crosshair; }
+  .scatter-legend {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 14px 18px; font-size: 12px;
+    backdrop-filter: blur(8px);
+  }
+  .scatter-legend .item {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 5px; cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .scatter-legend .item:hover { opacity: 0.65; }
+  .scatter-legend .dot {
+    width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0;
+  }
+  .scatter-legend .lbl {
+    color: var(--black); font-weight: 500; font-size: 11px;
+  }
+  .scatter-legend .cnt {
+    color: var(--grey-light); margin-left: 2px; font-size: 11px;
+  }
+  .scatter-tooltip {
+    display: none; position: absolute; z-index: 50;
+    background: rgba(255,255,255,0.97);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 14px 18px; max-width: 320px;
+    font-size: 13px; line-height: 1.5; pointer-events: none;
+    backdrop-filter: blur(8px);
+  }
+  .scatter-tooltip .tt-source {
+    font-size: 10px; color: var(--teal); font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .scatter-tooltip .tt-text { margin-top: 6px; color: var(--black); }
+  .scatter-tooltip .tt-cluster {
+    margin-top: 8px; font-size: 11px; color: var(--grey);
+    padding-top: 8px; border-top: 1px solid var(--rule);
+  }
+
+  /* ── Chart containers ────────────────────────────── */
+  .chart-wrap { position: relative; width: 100%; }
+  .chart-wrap.donut { max-width: 240px; margin: 0 auto; }
+
+  /* ── Cluster details ─────────────────────────────── */
+  .cluster-list { list-style: none; }
+  .cluster-item {
+    padding: 36px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cluster-item:first-child {
+    border-top: 1px solid var(--rule);
+  }
+  .cluster-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .cluster-name {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 20px; font-weight: 400; color: var(--black);
+  }
+  .cluster-count {
+    font-size: 12px; color: var(--grey); font-weight: 500;
+    white-space: nowrap; letter-spacing: 0.04em;
+  }
+  .cluster-desc {
+    font-size: 14px; color: var(--grey); line-height: 1.6;
+    margin-bottom: 20px; max-width: 640px;
+  }
+  .keywords {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+  }
+  .kw {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--teal);
+    padding: 4px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    background: var(--white);
+  }
+  .sent-bar {
+    display: flex; height: 3px; overflow: hidden;
+    border-radius: 2px;
+    margin: 14px 0 8px;
+  }
+  .sent-bar .seg-pos { background: var(--positive); }
+  .sent-bar .seg-neu { background: var(--grey-light); }
+  .sent-bar .seg-neg { background: var(--negative); }
+  .sent-labels {
+    display: flex; gap: 20px; font-size: 11px; color: var(--grey);
+    letter-spacing: 0.02em;
+  }
+  .sent-labels .pos { color: var(--positive); }
+  .sent-labels .neg { color: var(--negative); }
+
+  .sub-list { list-style: none; margin-top: 16px; }
+  .sub-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin: 0 -4px; padding-left: 4px; padding-right: 4px;
+    border-radius: 2px;
+  }
+  .sub-list li:hover { background: var(--teal-light); }
+  .sub-list li.active { background: var(--teal-light); color: var(--teal); }
+  .sub-list li:last-child { border-bottom: none; }
+  .sub-list .sub-name { color: inherit; }
+  .sub-list .sub-count {
+    font-size: 12px; color: var(--grey-light);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .viewing-sub {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 20px; font-size: 13px; color: var(--grey);
+  }
+  .viewing-sub .label { font-weight: 500; color: var(--black); }
+  .viewing-sub .clear-sub {
+    background: none; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: var(--teal);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 500; padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .viewing-sub .clear-sub:hover { color: var(--black); text-decoration: underline; }
+
+  /* ── Filter bar ──────────────────────────────────── */
+  .filter-bar {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 28px;
+  }
+  .filter-bar select {
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 9px 30px 9px 14px;
+    font-size: 12px; font-family: 'DM Sans', sans-serif;
+    cursor: pointer; appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3e%3cpath fill='%23888' d='M5 7L1 3h8z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat; background-position: right 10px center;
+    transition: border-color 0.2s;
+  }
+  .filter-bar select:focus { outline: none; border-color: var(--teal); }
+
+  /* ── Review feed ─────────────────────────────────── */
+  .review-feed { margin-bottom: 0; }
+  .review-item {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+    transition: opacity 0.15s;
+  }
+  .review-item:first-child {
+    border-top: 1px solid var(--rule);
+  }
+  .review-meta {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin-bottom: 10px;
+  }
+  .tag {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 3px 9px;
+    border-radius: 2px;
+  }
+  .tag.sentiment-positive { color: var(--positive); border: 1px solid rgba(58, 125, 92, 0.3); background: rgba(58, 125, 92, 0.05); }
+  .tag.sentiment-negative { color: var(--negative); border: 1px solid rgba(160, 65, 58, 0.3); background: rgba(160, 65, 58, 0.05); }
+  .tag.sentiment-neutral { color: var(--grey); border: 1px solid var(--grey-light); background: var(--white-soft); }
+  .tag.source { color: var(--teal); border: 1px solid var(--teal-mid); background: var(--teal-light); }
+  .tag.cluster { color: var(--grey); border: 1px solid var(--rule); background: var(--white-soft); }
+  .review-text {
+    font-size: 14px; line-height: 1.7; color: var(--black);
+    max-width: 720px;
+  }
+  .review-user {
+    font-size: 11px; color: var(--grey-light); margin-top: 10px;
+    letter-spacing: 0.02em;
+  }
+  .review-link {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--teal);
+    text-decoration: none; margin-left: auto;
+    transition: color 0.15s;
+    white-space: nowrap;
+  }
+  .review-link:hover { color: var(--black); }
+  .review-score {
+    color: var(--gold); font-size: 12px; letter-spacing: 1px;
+  }
+  .show-more-btn {
+    display: block; width: 100%;
+    padding: 14px; margin-top: 28px;
+    background: var(--white);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .show-more-btn:hover {
+    border-color: var(--teal); background: var(--teal-light);
+  }
+
+  /* ── Semantic Search ──────────────────────────────── */
+  .search-wrap {
+    margin-bottom: 48px;
+  }
+  .search-bar {
+    display: flex; gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-bar:focus-within {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px var(--teal-light);
+  }
+  .search-bar input {
+    flex: 1; padding: 14px 20px;
+    border: none; background: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; color: var(--black);
+    outline: none;
+  }
+  .search-bar input::placeholder {
+    color: var(--grey-light);
+  }
+  .search-bar button {
+    padding: 14px 24px;
+    background: var(--teal); color: var(--white);
+    border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .search-bar button:hover { background: #0e3d47; }
+  .search-bar button:disabled {
+    opacity: 0.5; cursor: not-allowed;
+  }
+  .search-info {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 14px; font-size: 13px; color: var(--grey);
+  }
+  .search-info .result-count { font-weight: 500; color: var(--teal); }
+  .search-clear {
+    background: none; border: none; cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px; color: var(--grey);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    font-weight: 500; padding: 4px 0;
+    transition: color 0.15s;
+  }
+  .search-clear:hover { color: var(--negative); }
+  .similarity-badge {
+    font-size: 10px; font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    padding: 3px 9px; margin-left: auto;
+    white-space: nowrap; border-radius: 2px;
+  }
+  .similarity-badge.high { color: var(--positive); border: 1px solid rgba(58, 125, 92, 0.3); background: rgba(58, 125, 92, 0.05); }
+  .similarity-badge.mid { color: var(--teal); border: 1px solid var(--teal-mid); background: var(--teal-light); }
+  .similarity-badge.low { color: var(--grey); border: 1px solid var(--grey-light); background: var(--white-soft); }
+
+  .empty-state {
+    text-align: left; padding: 80px 0; color: var(--grey);
+  }
+  .empty-state p { font-size: 15px; margin-bottom: 12px; }
+  .empty-state code {
+    font-size: 13px; color: var(--teal);
+    background: var(--teal-light); padding: 4px 10px;
+    border-radius: 2px;
+  }
+
+  /* ── Ideation: Feature Requests ───────────────────── */
+  .fr-list { list-style: none; }
+  .fr-item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid; grid-template-columns: 50px 1fr auto; gap: 20px;
+    align-items: start;
+  }
+  .fr-item:first-child { border-top: 1px solid var(--rule); }
+  .fr-rank {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 28px; color: var(--teal); line-height: 1;
+    text-align: center; padding-top: 2px;
+  }
+  .fr-body { min-width: 0; }
+  .fr-request {
+    font-size: 15px; font-weight: 500; color: var(--black);
+    line-height: 1.5; margin-bottom: 8px;
+  }
+  .fr-meta {
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin-bottom: 10px;
+  }
+  .fr-count {
+    font-size: 11px; font-weight: 600; color: var(--teal);
+    background: var(--teal-light); padding: 3px 10px;
+    border-radius: 2px; white-space: nowrap;
+  }
+  .fr-cat {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--grey);
+    border: 1px solid var(--rule); padding: 3px 9px;
+    border-radius: 2px;
+  }
+  .fr-effort {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 3px 9px;
+    border-radius: 2px;
+  }
+  .fr-effort.Small { color: var(--positive); border: 1px solid rgba(58,125,92,0.3); background: rgba(58,125,92,0.05); }
+  .fr-effort.Medium { color: #B8860B; border: 1px solid rgba(184,134,11,0.3); background: rgba(184,134,11,0.05); }
+  .fr-effort.Large { color: var(--negative); border: 1px solid rgba(160,65,58,0.3); background: rgba(160,65,58,0.05); }
+  .fr-quotes {
+    font-size: 13px; color: var(--grey); line-height: 1.6;
+    font-style: italic;
+  }
+  .fr-quotes span { display: block; margin-bottom: 4px; }
+
+  /* ── Ideation: Opportunities ──────────────────────── */
+  .opp-list { list-style: none; }
+  .opp-item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .opp-item:first-child { border-top: 1px solid var(--rule); }
+  .opp-head {
+    display: flex; align-items: start; gap: 16px; margin-bottom: 8px;
+  }
+  .opp-score {
+    flex-shrink: 0; width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 18px; font-weight: 400; border-radius: 2px;
+  }
+  .opp-score.crit { background: rgba(160,65,58,0.1); color: var(--negative); }
+  .opp-score.high { background: rgba(184,134,11,0.1); color: #B8860B; }
+  .opp-score.med  { background: var(--teal-light); color: var(--teal); }
+  .opp-score.low  { background: var(--white-soft); color: var(--grey); }
+  .opp-text { min-width: 0; }
+  .opp-opportunity {
+    font-size: 15px; font-weight: 500; color: var(--black);
+    line-height: 1.5; margin-bottom: 4px;
+  }
+  .opp-pain {
+    font-size: 13px; color: var(--grey); line-height: 1.5;
+  }
+  .opp-detail {
+    margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px;
+    align-items: center;
+  }
+  .opp-severity {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 3px 9px; border-radius: 2px;
+  }
+  .opp-severity.Critical { color: var(--negative); border: 1px solid rgba(160,65,58,0.3); background: rgba(160,65,58,0.05); }
+  .opp-severity.High { color: #B8860B; border: 1px solid rgba(184,134,11,0.3); background: rgba(184,134,11,0.05); }
+  .opp-severity.Medium { color: var(--teal); border: 1px solid var(--teal-mid); background: var(--teal-light); }
+  .opp-severity.Low { color: var(--grey); border: 1px solid var(--grey-light); background: var(--white-soft); }
+  .opp-approach {
+    font-size: 12px; color: var(--grey); line-height: 1.5;
+    margin-top: 10px; padding-left: 56px;
+    max-width: 640px;
+  }
+
+  /* ── Ideation: Competitors ────────────────────────── */
+  .comp-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .comp-card {
+    border: 1px solid var(--rule); border-radius: 2px;
+    padding: 28px; background: var(--white);
+  }
+  .comp-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .comp-name {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 20px; color: var(--black);
+  }
+  .comp-mentions {
+    font-size: 12px; color: var(--grey); font-weight: 500;
+    white-space: nowrap;
+  }
+  .comp-perception {
+    font-size: 13px; color: var(--grey); line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .comp-section-label {
+    font-size: 10px; font-weight: 500; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--teal); margin-bottom: 6px;
+  }
+  .comp-section-label.gap { color: var(--negative); }
+  .comp-tags {
+    display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px;
+  }
+  .comp-tag {
+    font-size: 11px; padding: 3px 8px; border-radius: 2px;
+    line-height: 1.4;
+  }
+  .comp-tag.adv { color: var(--positive); background: rgba(58,125,92,0.06); border: 1px solid rgba(58,125,92,0.2); }
+  .comp-tag.gap { color: var(--negative); background: rgba(160,65,58,0.06); border: 1px solid rgba(160,65,58,0.2); }
+  .comp-quote {
+    font-size: 12px; color: var(--grey); font-style: italic;
+    line-height: 1.5; margin-top: 8px;
+    padding-top: 8px; border-top: 1px solid var(--rule);
+  }
+
+  /* ── Ideation Tabs ───────────────────────────────── */
+  .ideation-section { display: none; }
+  .ideation-section.visible { display: block; }
+  .ideation-tabs {
+    display: flex; gap: 0; margin-bottom: 32px;
+    border: 1px solid var(--rule); border-radius: 2px;
+    overflow: hidden; width: fit-content;
+  }
+  .ideation-tab {
+    padding: 12px 24px;
+    background: var(--white);
+    border: none; border-right: 1px solid var(--rule);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--grey); cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .ideation-tab:last-child { border-right: none; }
+  .ideation-tab:hover { color: var(--black); background: var(--white-soft); }
+  .ideation-tab.active {
+    background: var(--teal); color: var(--white);
+  }
+  .ideation-panel { display: none; }
+  .ideation-panel.active { display: block; }
+
+  /* ── Top-level page tabs (Overview vs Ideation pages) ───── */
+  .page-tabs-wrap {
+    display: none; margin-bottom: 0;
+    position: sticky; top: 0; z-index: 50;
+    background: var(--white);
+    border-bottom: 1px solid var(--rule);
+    padding-top: 0;
+  }
+  .page-tabs-wrap.visible { display: block; }
+  .page-tabs {
+    display: flex; gap: 0;
+    border-bottom: 1px solid var(--rule);
+    padding: 0 48px; margin: 0 -48px 32px;
+  }
+  .page-tab {
+    padding: 14px 20px;
+    background: none; border: none;
+    border-bottom: 3px solid transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--grey); cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    margin-bottom: -1px;
+  }
+  .page-tab:hover { color: var(--black); }
+  .page-tab.active {
+    color: var(--teal);
+    border-bottom-color: var(--teal);
+  }
+  .app-view { display: none; }
+  .app-view.active { display: block; }
+
+  /* ── Footer ──────────────────────────────────────── */
+  footer {
+    background: var(--white);
+    border-top: 1px solid var(--rule);
+    padding: 40px 0;
+    margin-top: 0;
+  }
+  footer .container {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  footer .foot-left {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 16px; color: var(--teal);
+    font-style: italic;
+  }
+  footer .foot-right {
+    font-size: 11px; color: var(--grey);
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  footer a { color: var(--teal); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    h2 { font-size: 24px; }
+    .stat-value { font-size: 30px; }
+    section { padding: 56px 0 0; }
+    .container { padding: 0 24px; }
+    .scatter-container { height: 380px; }
+    .page-tabs { padding: 0 24px; margin: 0 -24px 24px; flex-wrap: wrap; }
+    .page-tab { padding: 10px 12px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+
+  <div class="page-tabs-wrap container" id="pageTabsWrap">
+    <div class="page-tabs">
+      <button type="button" class="page-tab active" data-view="overview">Overview</button>
+      <button type="button" class="page-tab" data-view="feature-requests">Feature requests</button>
+      <button type="button" class="page-tab" data-view="opportunities">Pain → opportunity</button>
+      <button type="button" class="page-tab" data-view="competitors">Competitors</button>
+    </div>
+  </div>
+
+  <div id="viewOverview" class="app-view active">
+
+  <!-- ── Hero / Overview ───────────────────────────── -->
+  <section>
+    <div class="container">
+      <p class="section-label">Overview</p>
+      <h1 id="heroHeadline">Beli reviews</h1>
+      <p class="subtitle">App Store, Google Play, Reddit.</p>
+      <div class="stats-row" id="statBar"></div>
+    </div>
+  </section>
+
+  <!-- ── UMAP Scatter ──────────────────────────────── -->
+  <section>
+    <div class="container">
+      <hr class="section-rule">
+      <p class="section-label">Clusters</p>
+      <h2>Reviews by cluster</h2>
+      <div class="scatter-container">
+        <canvas class="scatter-canvas" id="scatterCanvas"></canvas>
+        <div class="scatter-legend" id="scatterLegend"></div>
+        <div class="scatter-tooltip" id="scatterTooltip"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Analysis: Cluster bar + Sentiment donut ──── -->
+  <section>
+    <div class="container">
+      <hr class="section-rule">
+      <p class="section-label">Breakdown</p>
+      <h2>Clusters and sentiment</h2>
+      <div class="col-layout">
+        <div>
+          <h3>Cluster distribution</h3>
+          <div class="chart-wrap"><canvas id="clusterChart"></canvas></div>
+        </div>
+        <div>
+          <h3>Sentiment split</h3>
+          <div class="chart-wrap donut"><canvas id="sentimentChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cluster Details ───────────────────────────── -->
+  <section>
+    <div class="container">
+      <hr class="section-rule">
+      <p class="section-label">Cluster Details</p>
+      <h2 id="clusterHeading">Clusters</h2>
+      <ul class="cluster-list" id="clusterList"></ul>
+    </div>
+  </section>
+
+  <!-- ── Semantic Search + Review Feed ─────────────── -->
+  <section>
+    <div class="container">
+      <hr class="section-rule">
+      <div id="searchSection">
+      <p class="section-label">Search</p>
+      <h2>Search reviews</h2>
+      <div class="search-wrap">
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="e.g. &ldquo;recommendations from friends&rdquo; or &ldquo;app crashes on startup&rdquo;" autocomplete="off">
+          <button id="searchBtn" onclick="runSearch()">Search</button>
+        </div>
+        <div class="search-info" id="searchInfo" style="display:none">
+          <span><span class="result-count" id="searchCount"></span> results for &ldquo;<span id="searchQuery"></span>&rdquo;</span>
+          <button class="search-clear" onclick="clearSearch()">Clear search</button>
+        </div>
+      </div>
+      </div><!-- /searchSection -->
+
+      <p class="section-label">Feed</p>
+      <h2>All reviews</h2>
+      <div class="filter-bar">
+        <select id="filterSource"><option value="">All Sources</option></select>
+        <select id="filterSentiment">
+          <option value="">All Sentiments</option>
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+          <option value="neutral">Neutral</option>
+        </select>
+        <select id="filterCluster"><option value="">All Clusters</option></select>
+      </div>
+      <div class="viewing-sub" id="viewingSub" style="display:none">
+        <span class="label" id="viewingSubLabel"></span>
+        <button type="button" class="clear-sub" id="clearSubBtn">Clear subcategory</button>
+      </div>
+      <div class="review-feed" id="reviewFeed"></div>
+      <button class="show-more-btn" id="showMore" onclick="loadMoreReviews()">Show more reviews</button>
+    </div>
+  </section>
+
+  </div><!-- /viewOverview -->
+
+  <!-- ── Ideation: Feature requests (separate page) ──── -->
+  <div id="viewFeatureRequests" class="app-view">
+    <section>
+      <div class="container">
+        <p class="section-label">Ideation</p>
+        <h1>Feature requests</h1>
+        <p class="subtitle">Ranked by frequency.</p>
+        <ul class="fr-list" id="featureRequestList"></ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── Ideation: Pain → opportunity (separate page) ─ -->
+  <div id="viewOpportunities" class="app-view">
+    <section>
+      <div class="container">
+        <p class="section-label">Ideation</p>
+        <h1>Pain → opportunity</h1>
+        <p class="subtitle">Ranked by impact.</p>
+        <ul class="opp-list" id="opportunityList"></ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ── Ideation: Competitors (separate page) ──────── -->
+  <div id="viewCompetitors" class="app-view">
+    <section>
+      <div class="container">
+        <p class="section-label">Ideation</p>
+        <h1>Competitors</h1>
+        <p class="subtitle">Advantages and gaps from reviews.</p>
+        <div class="comp-grid" id="competitorGrid"></div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="foot-left">beli</div>
+    <div class="foot-right">App Store / Google Play / Reddit</div>
+  </div>
+</footer>
+
+<script>
+const CLUSTER_COLORS = [
+  '#134F5C', '#3A7D5C', '#A0413A', '#EBC560', '#6B8E8E', '#8E6B5C',
+  '#5C7A91', '#917A5C', '#5C9178', '#91605C'
+];
+
+let DATA = [];
+let CLUSTERS = {};
+let VISIBLE = 20;
+let SEARCH_RESULTS = null;
+let SUB_CLUSTER_KEY = null;
+
+async function init() {
+  let raw;
+  try {
+    const resp = await fetch('themes.json');
+    raw = await resp.json();
+  } catch {
+    document.getElementById('app').innerHTML =
+      '<div class="container"><div class="empty-state">' +
+      '<p>Could not load <strong>themes.json</strong></p>' +
+      '<p>Run the pipeline first:</p>' +
+      '<code>python scrape.py && python analyze.py</code>' +
+      '</div></div>';
+    return;
+  }
+
+  DATA = raw.reviews || [];
+  CLUSTERS = raw.clusters || {};
+
+  document.getElementById('heroHeadline').textContent =
+    `${DATA.length.toLocaleString()} Beli reviews`;
+  document.getElementById('clusterHeading').textContent =
+    `${Object.keys(CLUSTERS).length} clusters`;
+
+  renderStats();
+  renderScatter();
+  renderCharts();
+  renderClusterDetails();
+  populateFilters();
+  renderReviews();
+  loadIdeation();
+
+  if (window.location.hostname.indexOf('github.io') !== -1) {
+    document.getElementById('searchSection').style.display = 'none';
+  } else {
+    document.getElementById('searchInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') runSearch();
+    });
+  }
+}
+
+function renderStats() {
+  const total = DATA.length;
+  const withScore = DATA.filter(d => d.score != null && d.score > 0);
+  const avg = withScore.length
+    ? (withScore.reduce((s, d) => s + d.score, 0) / withScore.length).toFixed(1)
+    : '-';
+  const positive = DATA.filter(d => d.sentiment === 'positive').length;
+  const negative = DATA.filter(d => d.sentiment === 'negative').length;
+  const pct = total ? Math.round((positive / total) * 100) : 0;
+  const sources = new Set(DATA.map(d => d.source));
+
+  document.getElementById('statBar').innerHTML = `
+    <div class="stat">
+      <div class="stat-value">${total}</div>
+      <div class="stat-label">Total reviews</div>
+      <div class="stat-sub">${sources.size} sources</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">${avg}</div>
+      <div class="stat-label">Avg rating</div>
+      <div class="stat-sub">${withScore.length} rated</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">${pct}%</div>
+      <div class="stat-label">Positive</div>
+      <div class="stat-sub">${positive} reviews</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value">${total ? Math.round((negative / total) * 100) : 0}%</div>
+      <div class="stat-label">Negative</div>
+      <div class="stat-sub">${negative} reviews</div>
+    </div>
+  `;
+}
+
+/* ── UMAP Scatter ────────────────────────────────────────── */
+function renderScatter() {
+  const canvas = document.getElementById('scatterCanvas');
+  const ctx = canvas.getContext('2d');
+  const container = canvas.parentElement;
+  const dpr = window.devicePixelRatio || 1;
+
+  function resize() {
+    const rect = container.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+
+  const xs = DATA.map(d => d.x);
+  const ys = DATA.map(d => d.y);
+  const xMin = Math.min(...xs), xMax = Math.max(...xs);
+  const yMin = Math.min(...ys), yMax = Math.max(...ys);
+  const pad = 40;
+
+  function toScreen(x, y) {
+    const w = canvas.width / dpr - pad * 2;
+    const h = canvas.height / dpr - pad * 2;
+    return [
+      pad + ((x - xMin) / (xMax - xMin)) * w,
+      pad + ((y - yMin) / (yMax - yMin)) * h,
+    ];
+  }
+
+  const points = DATA.map((d, i) => {
+    const [sx, sy] = toScreen(d.x, d.y);
+    return { sx, sy, i, cluster: d.cluster_id };
+  });
+
+  function draw(highlightCluster) {
+    ctx.clearRect(0, 0, canvas.width / dpr, canvas.height / dpr);
+    for (const p of points) {
+      const color = CLUSTER_COLORS[p.cluster % CLUSTER_COLORS.length];
+      const dimmed = highlightCluster !== undefined && highlightCluster !== p.cluster;
+      ctx.globalAlpha = dimmed ? 0.06 : 0.65;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(p.sx, p.sy, 3, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+  draw();
+
+  const legend = document.getElementById('scatterLegend');
+  legend.innerHTML = Object.entries(CLUSTERS)
+    .sort((a, b) => b[1].size - a[1].size)
+    .map(([id, c]) => {
+      const color = CLUSTER_COLORS[parseInt(id) % CLUSTER_COLORS.length];
+      return `<div class="item" data-cluster="${id}">
+        <div class="dot" style="background:${color}"></div>
+        <span class="lbl">${c.label}</span>
+        <span class="cnt">${c.size}</span>
+      </div>`;
+    }).join('');
+
+  legend.querySelectorAll('.item').forEach(el => {
+    el.addEventListener('mouseenter', () => draw(parseInt(el.dataset.cluster)));
+    el.addEventListener('mouseleave', () => draw());
+  });
+
+  const tooltip = document.getElementById('scatterTooltip');
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const mx = e.clientX - rect.left;
+    const my = e.clientY - rect.top;
+    let closest = null, minDist = 18;
+    for (const p of points) {
+      const d = Math.hypot(p.sx - mx, p.sy - my);
+      if (d < minDist) { minDist = d; closest = p; }
+    }
+    if (closest) {
+      const d = DATA[closest.i];
+      tooltip.style.display = 'block';
+      tooltip.style.left = (closest.sx + 16) + 'px';
+      tooltip.style.top = (closest.sy - 20) + 'px';
+      if (closest.sx > (canvas.width / dpr) - 360)
+        tooltip.style.left = (closest.sx - 356) + 'px';
+      tooltip.innerHTML = `
+        <div class="tt-source">${esc(d.source)} ${d.score ? '\u00b7 ' + '\u2605'.repeat(d.score) : ''}</div>
+        <div class="tt-text">${esc((d.text || '').slice(0, 220))}${(d.text||'').length > 220 ? '\u2026' : ''}</div>
+        <div class="tt-cluster">${esc(d.cluster_label)} \u00b7 ${esc(d.sub_cluster_label)}</div>`;
+    } else {
+      tooltip.style.display = 'none';
+    }
+  });
+  canvas.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+}
+
+/* ── Charts ──────────────────────────────────────────────── */
+function renderCharts() {
+  Chart.defaults.color = '#888888';
+  Chart.defaults.borderColor = 'rgba(0, 0, 0, 0.06)';
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+
+  const sorted = Object.entries(CLUSTERS).sort((a, b) => b[1].size - a[1].size);
+  const labels = sorted.map(([, c]) => c.label);
+  const sizes = sorted.map(([, c]) => c.size);
+  const colors = sorted.map(([id]) => CLUSTER_COLORS[parseInt(id) % CLUSTER_COLORS.length]);
+
+  new Chart(document.getElementById('clusterChart'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: sizes,
+        backgroundColor: colors,
+        borderWidth: 0,
+        borderRadius: 1,
+      }]
+    },
+    options: {
+      indexAxis: 'y', responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 12 } } },
+        y: { grid: { display: false }, ticks: { font: { size: 12 } } }
+      }
+    }
+  });
+
+  const sentCounts = { positive: 0, negative: 0, neutral: 0 };
+  DATA.forEach(d => { if (sentCounts[d.sentiment] !== undefined) sentCounts[d.sentiment]++; });
+
+  new Chart(document.getElementById('sentimentChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Positive', 'Negative', 'Neutral'],
+      datasets: [{
+        data: [sentCounts.positive, sentCounts.negative, sentCounts.neutral],
+        backgroundColor: ['#3A7D5C', '#A0413A', '#C5C2BA'],
+        borderColor: '#FFFFFF',
+        borderWidth: 3,
+        spacing: 2,
+      }]
+    },
+    options: {
+      responsive: true, cutout: '62%',
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { padding: 20, font: { size: 12 }, boxWidth: 10, boxHeight: 10 }
+        }
+      }
+    }
+  });
+}
+
+/* ── Cluster Detail List ─────────────────────────────────── */
+function renderClusterDetails() {
+  const el = document.getElementById('clusterList');
+  const sorted = Object.entries(CLUSTERS).sort((a, b) => b[1].size - a[1].size);
+
+  el.innerHTML = sorted.map(([id, c]) => {
+    const clusterReviews = DATA.filter(d => d.cluster_id === parseInt(id));
+    const pos = clusterReviews.filter(r => r.sentiment === 'positive').length;
+    const neg = clusterReviews.filter(r => r.sentiment === 'negative').length;
+    const total = clusterReviews.length || 1;
+    const pPct = Math.round(pos / total * 100);
+    const nPct = Math.round(neg / total * 100);
+    const uPct = 100 - pPct - nPct;
+
+    const subs = Object.entries(c.sub_clusters || {}).sort((a, b) => b[1].size - a[1].size);
+
+    return `
+      <li class="cluster-item">
+        <div class="cluster-head">
+          <span class="cluster-name">${esc(c.label)}</span>
+          <span class="cluster-count">${c.size} reviews</span>
+        </div>
+        ${c.description ? '<p class="cluster-desc">' + esc(c.description) + '</p>' : ''}
+        <div class="keywords">${(c.keywords || []).map(k =>
+          '<span class="kw">' + esc(k) + '</span>'
+        ).join('')}</div>
+        <div class="sent-bar">
+          <div class="seg-pos" style="width:${pPct}%"></div>
+          <div class="seg-neu" style="width:${uPct}%"></div>
+          <div class="seg-neg" style="width:${nPct}%"></div>
+        </div>
+        <div class="sent-labels">
+          <span class="pos">${pPct}% positive</span>
+          <span>${uPct}% neutral</span>
+          <span class="neg">${nPct}% negative</span>
+        </div>
+        ${subs.length ? '<ul class="sub-list">' + subs.map(([subKey, s]) =>
+          '<li class="' + (SUB_CLUSTER_KEY === subKey ? 'active' : '') + '" data-sub-key="' + String(subKey).replace(/"/g, '&quot;') + '" data-cluster-id="' + String(id) + '" data-sub-label="' + String(s.label || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '" data-cluster-label="' + String(c.label || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"><span class="sub-name">' + esc(s.label) + '</span><span class="sub-count">' + s.size + '</span></li>'
+        ).join('') + '</ul>' : ''}
+      </li>`;
+  }).join('');
+
+  el.querySelectorAll('.sub-list li[data-sub-key]').forEach(li => {
+    li.addEventListener('click', () => {
+      const key = li.getAttribute('data-sub-key');
+      const clusterLabel = li.getAttribute('data-cluster-label');
+      const subLabel = li.getAttribute('data-sub-label');
+      SUB_CLUSTER_KEY = key;
+      document.getElementById('filterCluster').value = li.getAttribute('data-cluster-id');
+      document.getElementById('viewingSubLabel').textContent = 'Viewing: ' + subLabel + ' (\u2190 ' + clusterLabel + ')';
+      document.getElementById('viewingSub').style.display = 'flex';
+      VISIBLE = 20;
+      renderClusterDetails();
+      renderReviews();
+      document.getElementById('reviewFeed').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+/* ── Semantic Search ──────────────────────────────────────── */
+async function runSearch() {
+  const input = document.getElementById('searchInput');
+  const query = input.value.trim();
+  if (!query) return;
+
+  const btn = document.getElementById('searchBtn');
+  btn.disabled = true;
+  btn.textContent = 'Searching…';
+
+  try {
+    const resp = await fetch('/search?q=' + encodeURIComponent(query) + '&k=50');
+    if (!resp.ok) throw new Error('Search endpoint unavailable');
+    const data = await resp.json();
+    SEARCH_RESULTS = data.results || [];
+
+    document.getElementById('searchCount').textContent = SEARCH_RESULTS.length;
+    document.getElementById('searchQuery').textContent = query;
+    document.getElementById('searchInfo').style.display = 'flex';
+
+    VISIBLE = 20;
+    renderReviews();
+  } catch (err) {
+    console.error('Search failed:', err);
+    alert('Semantic search requires the search server.\nRun: python search_server.py');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Search';
+  }
+}
+
+function clearSearch() {
+  SEARCH_RESULTS = null;
+  document.getElementById('searchInput').value = '';
+  document.getElementById('searchInfo').style.display = 'none';
+  VISIBLE = 20;
+  renderReviews();
+}
+
+/* ── Filters + Review Feed ───────────────────────────────── */
+function populateFilters() {
+  const sources = [...new Set(DATA.map(d => d.source))].sort();
+  const clusters = Object.entries(CLUSTERS).sort((a, b) => b[1].size - a[1].size);
+  const srcSel = document.getElementById('filterSource');
+  const cluSel = document.getElementById('filterCluster');
+
+  sources.forEach(s => {
+    const o = document.createElement('option'); o.value = s; o.textContent = s;
+    srcSel.appendChild(o);
+  });
+  clusters.forEach(([id, c]) => {
+    const o = document.createElement('option'); o.value = id;
+    o.textContent = c.label + ' (' + c.size + ')';
+    cluSel.appendChild(o);
+  });
+
+  srcSel.addEventListener('change', () => { VISIBLE = 20; renderReviews(); });
+  document.getElementById('filterSentiment').addEventListener('change', () => { VISIBLE = 20; renderReviews(); });
+  cluSel.addEventListener('change', () => {
+    SUB_CLUSTER_KEY = null;
+    document.getElementById('viewingSub').style.display = 'none';
+    VISIBLE = 20;
+    renderClusterDetails();
+    renderReviews();
+  });
+
+  document.getElementById('clearSubBtn').addEventListener('click', () => {
+    SUB_CLUSTER_KEY = null;
+    document.getElementById('viewingSub').style.display = 'none';
+    document.getElementById('filterCluster').value = '';
+    VISIBLE = 20;
+    renderClusterDetails();
+    renderReviews();
+  });
+}
+
+function getFiltered() {
+  const src = document.getElementById('filterSource').value;
+  const sent = document.getElementById('filterSentiment').value;
+  const clu = document.getElementById('filterCluster').value;
+
+  let base = SEARCH_RESULTS !== null ? SEARCH_RESULTS : DATA;
+
+  return base.filter(d =>
+    (!src || d.source === src) &&
+    (!sent || d.sentiment === sent) &&
+    (clu === '' || d.cluster_id === parseInt(clu)) &&
+    (!SUB_CLUSTER_KEY || d.sub_cluster_key === SUB_CLUSTER_KEY)
+  );
+}
+
+function renderReviews() {
+  const filtered = getFiltered();
+  const slice = filtered.slice(0, VISIBLE);
+  document.getElementById('reviewFeed').innerHTML = slice.map(renderReviewCard).join('');
+  document.getElementById('showMore').style.display =
+    VISIBLE >= filtered.length ? 'none' : 'block';
+}
+
+function loadMoreReviews() { VISIBLE += 20; renderReviews(); }
+
+function renderReviewCard(d) {
+  const stars = d.score
+    ? '\u2605'.repeat(Math.min(d.score, 5)) + '\u2606'.repeat(Math.max(0, 5 - d.score))
+    : '';
+  const sentClass = d.sentiment ? 'sentiment-' + d.sentiment : 'sentiment-neutral';
+  const linkHtml = d.url
+    ? '<a class="review-link" href="' + esc(d.url) + '" target="_blank" rel="noopener">View source \u2197</a>'
+    : '';
+  let simBadge = '';
+  if (d.similarity != null) {
+    const pct = Math.round(d.similarity * 100);
+    const tier = d.similarity >= 0.5 ? 'high' : d.similarity >= 0.3 ? 'mid' : 'low';
+    simBadge = '<span class="similarity-badge ' + tier + '">' + pct + '% match</span>';
+  }
+  return `
+    <div class="review-item">
+      <div class="review-meta">
+        <span class="tag ${sentClass}">${d.sentiment || '\u2014'}</span>
+        <span class="tag source">${esc(d.source)}</span>
+        <span class="tag cluster">${esc(d.cluster_label || '\u2014')}</span>
+        ${stars ? '<span class="review-score">' + stars + '</span>' : ''}
+        ${simBadge}
+        ${linkHtml}
+      </div>
+      <div class="review-text">${esc((d.text || '').slice(0, 500))}</div>
+      <div class="review-user">
+        ${d.username ? esc(d.username) : ''}${d.username && d.date ? ' \u00b7 ' : ''}${d.date ? d.date.slice(0, 10) : ''}
+      </div>
+    </div>`;
+}
+
+/* ── Ideation ─────────────────────────────────────────────── */
+async function loadIdeation() {
+  try {
+    const resp = await fetch('ideation.json');
+    if (!resp.ok) return;
+    const data = await resp.json();
+    let hasData = false;
+    if (data.feature_requests && data.feature_requests.length) {
+      renderFeatureRequests(data.feature_requests);
+      hasData = true;
+    }
+    if (data.pain_opportunities && data.pain_opportunities.length) {
+      renderOpportunities(data.pain_opportunities);
+      hasData = true;
+    }
+    if (data.competitors && data.competitors.summary && data.competitors.summary.length) {
+      renderCompetitors(data.competitors.summary);
+      hasData = true;
+    }
+    if (hasData) {
+      document.getElementById('pageTabsWrap').classList.add('visible');
+      initPageTabs();
+    }
+  } catch { /* ideation.json not found */ }
+}
+
+function initPageTabs() {
+  const tabs = document.querySelectorAll('.page-tab');
+  const viewIds = ['viewOverview', 'viewFeatureRequests', 'viewOpportunities', 'viewCompetitors'];
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      viewIds.forEach(id => document.getElementById(id).classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(viewIds[i]).classList.add('active');
+    });
+  });
+}
+
+function renderFeatureRequests(items) {
+  const el = document.getElementById('featureRequestList');
+  el.innerHTML = items.slice(0, 25).map((fr, i) => {
+    const quotes = (fr.example_quotes || []).slice(0, 2)
+      .map(q => '<span>\u201C' + esc(q.slice(0, 200)) + '\u201D</span>').join('');
+    return `
+      <li class="fr-item">
+        <div class="fr-rank">${i + 1}</div>
+        <div class="fr-body">
+          <div class="fr-request">${esc(fr.request)}</div>
+          <div class="fr-meta">
+            <span class="fr-count">${fr.count || '?'}\u00d7 requested</span>
+            ${fr.category ? '<span class="fr-cat">' + esc(fr.category) + '</span>' : ''}
+            ${fr.effort ? '<span class="fr-effort ' + esc(fr.effort) + '">' + esc(fr.effort) + ' effort</span>' : ''}
+          </div>
+          ${quotes ? '<div class="fr-quotes">' + quotes + '</div>' : ''}
+        </div>
+      </li>`;
+  }).join('');
+}
+
+function renderOpportunities(items) {
+  const el = document.getElementById('opportunityList');
+  el.innerHTML = items.slice(0, 20).map(opp => {
+    const score = opp.impact_score || 0;
+    const tier = score >= 9 ? 'crit' : score >= 7 ? 'high' : score >= 4 ? 'med' : 'low';
+    const sev = opp.severity || 'Medium';
+    const quotes = (opp.example_quotes || []).slice(0, 1)
+      .map(q => '\u201C' + esc(q.slice(0, 200)) + '\u201D').join('');
+    return `
+      <li class="opp-item">
+        <div class="opp-head">
+          <div class="opp-score ${tier}">${score}</div>
+          <div class="opp-text">
+            <div class="opp-opportunity">${esc(opp.opportunity)}</div>
+            <div class="opp-pain">${esc(opp.pain)}</div>
+          </div>
+        </div>
+        <div class="opp-detail">
+          <span class="opp-severity ${sev}">${sev}</span>
+          <span class="fr-count">${opp.count || '?'}\u00d7 reported</span>
+          ${quotes ? '<span style="font-size:12px;color:var(--grey);font-style:italic">' + quotes + '</span>' : ''}
+        </div>
+        ${opp.suggested_approach ? '<div class="opp-approach">\u2192 ' + esc(opp.suggested_approach) + '</div>' : ''}
+      </li>`;
+  }).join('');
+}
+
+function renderCompetitors(items) {
+  const el = document.getElementById('competitorGrid');
+  el.innerHTML = items.map(c => {
+    const advTags = (c.beli_advantages || []).slice(0, 4)
+      .map(a => '<span class="comp-tag adv">' + esc(a) + '</span>').join('');
+    const gapTags = (c.beli_gaps || []).slice(0, 4)
+      .map(g => '<span class="comp-tag gap">' + esc(g) + '</span>').join('');
+    const quote = (c.key_quotes || [])[0] || '';
+    return `
+      <div class="comp-card">
+        <div class="comp-head">
+          <span class="comp-name">${esc(c.name)}</span>
+          <span class="comp-mentions">${c.mention_count || '?'} mentions</span>
+        </div>
+        <p class="comp-perception">${esc(c.user_perception || '')}</p>
+        ${advTags ? '<div class="comp-section-label">Beli advantages</div><div class="comp-tags">' + advTags + '</div>' : ''}
+        ${gapTags ? '<div class="comp-section-label gap">Feature gaps</div><div class="comp-tags">' + gapTags + '</div>' : ''}
+        ${quote ? '<div class="comp-quote">\u201C' + esc(quote.slice(0, 250)) + '\u201D</div>' : ''}
+      </div>`;
+  }).join('');
+}
+
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s || '';
+  return d.innerHTML;
+}
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,1933 @@
+{
+  "feature_requests": [
+    {
+      "request": "Add dark mode support to the app",
+      "count": 10,
+      "category": "UI/UX",
+      "example_quotes": [
+        "still yet no dark mode",
+        "The only thing that could make it better is a dark mode. The app is bright white and it would great on the eyes if you added a dark mode option.",
+        "please please please add dark mode"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Allow users to input their own numerical ratings instead of forced comparison ranking",
+      "count": 9,
+      "category": "Ratings",
+      "example_quotes": [
+        "I should be able to rank the restaurant with my own number. I don't agree with any of the rankings that are on my account",
+        "Just let me pick my own number rating and put it in my list",
+        "you cannot give your own score, or adjust the score given. Hoping this gets added as it's a simple feature"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Add map view feature to see restaurants near you instead of just lists",
+      "count": 8,
+      "category": "Maps",
+      "example_quotes": [
+        "Why don't they have a map view?",
+        "I wish there was a tab to just look at the map and see restaurants near you instead of a list.",
+        "I just want a map of restaurants near me and somehow that is not offered"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Remove the requirement to invite friends to unlock features",
+      "count": 7,
+      "category": "Social",
+      "example_quotes": [
+        "Do not make me invite 4 friends to use the app.",
+        "this app would grow better if everyone was allowed to use all the features rather than blocking by invites",
+        "Allow me to dismiss the upper third of the Home Screen telling me to invite more people and put the features behind an in app purchase"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Allow users to create custom lists and categories for organizing restaurants",
+      "count": 7,
+      "category": "Organization",
+      "example_quotes": [
+        "Love this app so much but please make a custom lists feature!",
+        "wish I could create my own custom lists",
+        "custom labels would be SO MUCH MORE EASIER AND CONVENIENT"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Allow categorization by different dining types instead of ranking all restaurants together",
+      "count": 6,
+      "category": "Organization",
+      "example_quotes": [
+        "Or even by fast food, fast casual, fine dining, casual dining etc.",
+        "Would love the lists of restaurants to be separated to more categories because you can't really compare a pizza place to a fine dining spot",
+        "It needs better subcategories because some restaurants are hard to rank against each other, like ranking brunch against a steak house or a deli."
+      ],
+      "effort": "Large"
+    },
+    {
+      "request": "Allow ranking within specific cuisine categories rather than comparing all restaurants",
+      "count": 6,
+      "category": "Ratings",
+      "example_quotes": [
+        "You can't rank within each cuisine. How could I compare a bagel shop to a Greek restaurant?",
+        "it would be much more useful to rank WITHIN a certain label (for example, rank all your favorite Asian restaurants)",
+        "Scoring should only be based on restaurants in the same category/type of cuisine"
+      ],
+      "effort": "Large"
+    },
+    {
+      "request": "Add landscape mode support for iPad",
+      "count": 5,
+      "category": "Technical",
+      "example_quotes": [
+        "Would love to use this app in Landscape mode for iPad. Portrait mode is not ideal",
+        "My biggest gripe with the iPad app is that it does not support horizontal rotation",
+        "App is otherwise perfect besides no landscape orientation on the iPad!"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Add separate category for breakfast/brunch restaurants",
+      "count": 5,
+      "category": "Organization",
+      "example_quotes": [
+        "there needs to be a breakfast/brunch option so that it's a more accurate comparison",
+        "It would be great if bagel shops/breakfast places had their own category. It's so hard to rank a diner or a breakfast bagel to a full restaurant.",
+        "please consider making a category for brunch/breakfast food"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Add ability to search by neighborhood instead of just city",
+      "count": 5,
+      "category": "Discovery",
+      "example_quotes": [
+        "Wish I could search by borough",
+        "Please let me search by neighborhoods in New York. I can only search by city, which is not helpful",
+        "it desperately needs a neighborhood search not just a major city"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Allow separate ratings for atmosphere, service, and food quality",
+      "count": 4,
+      "category": "Ratings",
+      "example_quotes": [
+        "I also wish that you could rank on different axes (vibe vs food etc)",
+        "When deciding where to go people tend to think of atmosphere, service, and quality of food and drink as the three primary components... Beli does not allow for ratings of these elements",
+        "I need a different ranking section. Going to have breakfast somewhere is totally different to lunch."
+      ],
+      "effort": "Large"
+    },
+    {
+      "request": "Fix back button navigation to go to previous screen instead of home",
+      "count": 4,
+      "category": "UI/UX",
+      "example_quotes": [
+        "Why does the back button take you basically back home? It's very frustrating and makes navigation much harder.",
+        "or back gesture. PLEASE!",
+        "gets annoying to use sometimes without a back arrow"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Add ability to rank the same restaurant in multiple categories",
+      "count": 4,
+      "category": "Ratings",
+      "example_quotes": [
+        "Please add a feature to rank the same place in different categories. Some places are both coffee shops during the day and bars at night for example.",
+        "Also a way to rank a place as a bar AND restaurant together.",
+        "please add the ability to rank a location separately as a bar and a restaurant! There are so many places that I love their drinks but hate their food"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Make it easier to submit new restaurants to the database",
+      "count": 4,
+      "category": "Content",
+      "example_quotes": [
+        "way too hard to submit restaurants",
+        "I went to China for a week and 0% of the places I went to were on here... why can't I review them?",
+        "ability to pin point new locations (not everything is on the map obviously)"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Add messaging and communication features between friends",
+      "count": 4,
+      "category": "Social",
+      "example_quotes": [
+        "messaging friends/sending places via the app",
+        "photo commenting on for friends only",
+        "I wish when I add someone to a ranking that I dined with they would get a push notification to rank as well"
+      ],
+      "effort": "Large"
+    },
+    {
+      "request": "Remove or improve the comparison-based rating system",
+      "count": 4,
+      "category": "Ratings",
+      "example_quotes": [
+        "Absolutely hate the rating system... I tap 'too tough' every time because I simply don't care about comparing",
+        "Not a fan of having to decide which restaurant I like better. I always opt for 'too tough' but would prefer this didn't exist",
+        "wish I had more say in the rankings and that it wasn't automatic"
+      ],
+      "effort": "Large"
+    },
+    {
+      "request": "Add ability to filter and sort restaurant lists by various criteria",
+      "count": 4,
+      "category": "Organization",
+      "example_quotes": [
+        "there is NO way to sort by when you visited a place or filter by date",
+        "Would be nice if you could filter your own rankings by city though",
+        "saving my filters would be nice since I am rarely looking to spend $$$$"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Fix notification settings and reduce unwanted notifications",
+      "count": 4,
+      "category": "UI/UX",
+      "example_quotes": [
+        "I like the app but I get notifications even though they are all turned off besides reservations.",
+        "STOP with the streak and summary and whatever notifications... And there is NO way to opt out of these!",
+        "Every Single Action Trigger A Banner"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Add more restaurant categories beyond just restaurants and cafes",
+      "count": 4,
+      "category": "Organization",
+      "example_quotes": [
+        "Need more categories: fast food, pizza/sub/sandwich shops for food places that aren't restaurants",
+        "they need to add more categories as to what kind of food ie: breakfast lunch and dinner instead of just restaurant and cafes",
+        "I do believe that more categories should be added...I'm specifically talking about a winery/brewery category"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Show user photos and notes in restaurant list views",
+      "count": 3,
+      "category": "Organization",
+      "example_quotes": [
+        "can we PLEASE have the option to see our pictures/blurbs of our notes when looking at our 'been' lists???",
+        "Ability to toggle on/off to show personal notes in the overall list view",
+        "It would be super helpful to be able to see my notes and photos from it"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Allow sharing lists outside of the platform without requiring Beli app",
+      "count": 3,
+      "category": "Social",
+      "example_quotes": [
+        "the seeming inability to share my lists outside of the platform",
+        "I wish it had export features. You can't send your list to friends unless they have the Beli app installed too",
+        "Add features around sharing"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Add global ratings to see how all users rate restaurants",
+      "count": 3,
+      "category": "Ratings",
+      "example_quotes": [
+        "The ability to see a 'global' average ranking for every single restaurant based on users in the app alongside your friends ranking and your own ranking",
+        "would love if the app showed me \"Beli's Score\" based on its entire userbase rather than telling me what it \"thinks\" my score is",
+        "deeply annoyed by the fact that there aren't restaurant ratings (as google does)"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Improve search functionality for finding restaurants by cuisine and specific items",
+      "count": 3,
+      "category": "Discovery",
+      "example_quotes": [
+        "the search functionality really badly needs to be updated. When you go to search it has prompts for cuisine and even occasion, but searching for 'cafe' or 'steakhouse' only ever returns super specific and even extremely distant results",
+        "Hard to search up specific things or when you try to search up best burritos or best food in specific city it doesn't come up",
+        "I think it could really be next level if we could search with those filters or save according to those filters"
+      ],
+      "effort": "Medium"
+    },
+    {
+      "request": "Add ability to see visit dates and when restaurants were reviewed",
+      "count": 3,
+      "category": "Content",
+      "example_quotes": [
+        "it would be great to see the date of my friends' ranking or visit date under each restaurant listing",
+        "I wish the app would show the date you reviewed each place",
+        "Be able to add date(s) that the spot was visited"
+      ],
+      "effort": "Small"
+    },
+    {
+      "request": "Fix technical issues with app performance and visual lag",
+      "count": 3,
+      "category": "Technical",
+      "example_quotes": [
+        "once you have more than about 200 restaurants ranked, it's extremely inconvenient to reorder the list because of how intense the visual lag is",
+        "I'll be trying to add captions to photos and the whole app just freezes",
+        "The filter in Your Lists tab never works. Please fix it"
+      ],
+      "effort": "Medium"
+    }
+  ],
+  "pain_opportunities": [
+    {
+      "pain": "Users are forced to invite 4 friends before accessing core app features",
+      "opportunity": "Allow users to experience core functionality immediately with optional friend invites for enhanced features",
+      "count": 15,
+      "severity": "Critical",
+      "impact_score": 10,
+      "example_quotes": [
+        "Do not make me invite 4 friends to use the app.",
+        "You can't even use the basic features of this app without inviting people"
+      ],
+      "suggested_approach": "Create a freemium model where core features are immediately accessible, with social features as optional enhancements."
+    },
+    {
+      "pain": "App performance is extremely slow with frequent freezing and crashes",
+      "opportunity": "Optimize app performance to eliminate freezing, reduce loading times, and ensure stable operation",
+      "count": 8,
+      "severity": "Critical",
+      "impact_score": 10,
+      "example_quotes": [
+        "Takes me over 1 min to add each restaurant since the app loads so slowly.",
+        "App is constantly freezing and slow"
+      ],
+      "suggested_approach": "Conduct comprehensive performance audit and optimize critical user flows to achieve sub-2-second loading times."
+    },
+    {
+      "pain": "Search and recommendation features are broken or completely non-functional",
+      "opportunity": "Build a robust search and recommendation engine that reliably surfaces relevant restaurants",
+      "count": 6,
+      "severity": "Critical",
+      "impact_score": 10,
+      "example_quotes": [
+        "Recs don't work. Which is the whole point of the app",
+        "i can no longer use the search function (which obviously makes the app worthless)"
+      ],
+      "suggested_approach": "Rebuild core search infrastructure with proper indexing, filtering, and fallback mechanisms to ensure 99%+ reliability."
+    },
+    {
+      "pain": "Map functionality is broken showing blank screens or failing to load",
+      "opportunity": "Create a reliable, fast-loading map interface that accurately displays restaurant locations",
+      "count": 7,
+      "severity": "High",
+      "impact_score": 9,
+      "example_quotes": [
+        "unable to use map view. literally just loads for 5 seconds and then shows blank white screen",
+        "Recommendation maps are unusable. It's often blank"
+      ],
+      "suggested_approach": "Implement robust map rendering with offline fallbacks and proper error handling for network issues."
+    },
+    {
+      "pain": "Rating calculation system has persistent bugs causing incorrect scores",
+      "opportunity": "Fix rating calculation engine to ensure accurate and reliable scoring throughout the app",
+      "count": 4,
+      "severity": "Critical",
+      "impact_score": 9,
+      "example_quotes": [
+        "Unfortunately there has been a bug for a month now that makes the ratings miscalculate",
+        "The app shifted all my ratings around because it didn't like that I had so few 9.0+ ratings"
+      ],
+      "suggested_approach": "Audit and rewrite rating calculation logic with comprehensive testing to prevent data corruption."
+    },
+    {
+      "pain": "Phone number required upfront with no alternative social login options",
+      "opportunity": "Implement Apple Sign-In and other social login options as alternatives to phone number registration",
+      "count": 6,
+      "severity": "High",
+      "impact_score": 8,
+      "example_quotes": [
+        "At least let me sign up with Apple before I 'commit' to giving my phone number!",
+        "Phone number required for signup? must invite friends? I don't sign up for random apps"
+      ],
+      "suggested_approach": "Add social login options (Apple, Google) and make phone number optional for initial app exploration."
+    },
+    {
+      "pain": "Cannot access basic discovery features without completing reviews or inviting friends",
+      "opportunity": "Provide immediate access to restaurant discovery and browsing without requiring prior engagement",
+      "count": 8,
+      "severity": "High",
+      "impact_score": 8,
+      "example_quotes": [
+        "trying to just look around and browse for places in a city is impossible. you have to unlock features by doing reviews",
+        "It's pointless that we can't access recommendations or do specific searches cause we haven't reviewed enough places"
+      ],
+      "suggested_approach": "Make core discovery features immediately available while incentivizing contributions through other means."
+    },
+    {
+      "pain": "UI is confusing, cluttered, and difficult to navigate",
+      "opportunity": "Redesign user interface with cleaner navigation patterns and more intuitive user flows",
+      "count": 5,
+      "severity": "High",
+      "impact_score": 8,
+      "example_quotes": [
+        "Ui is hard to figure out, not easy to use.",
+        "Something about the font, the colors, the spacing or something else bothers my eyes, there are so many buttons and prompts"
+      ],
+      "suggested_approach": "Conduct UX research and redesign with focus on simplicity, visual hierarchy, and user-centered design principles."
+    },
+    {
+      "pain": "Food preferences are ignored in recommendations algorithm",
+      "opportunity": "Implement proper preference filtering to exclude unwanted cuisine types from recommendations",
+      "count": 3,
+      "severity": "High",
+      "impact_score": 8,
+      "example_quotes": [
+        "I get Thai food recommendations all the time and I put my preferences as no Thai food.",
+        "I plugged all the restaurants into the app I've eaten in NYC (not one of them sushi) and 90% of the recommended restaurants are SUSHI RESTAURANTS"
+      ],
+      "suggested_approach": "Rebuild recommendation engine to strictly respect user dietary preferences and cuisine exclusions."
+    },
+    {
+      "pain": "Notifications continue despite being disabled in settings",
+      "opportunity": "Fix notification settings to properly respect user preferences and disable unwanted notifications",
+      "count": 3,
+      "severity": "High",
+      "impact_score": 8,
+      "example_quotes": [
+        "I have all notifications turned off but they still insist on sending me notifications.",
+        "Deselect 'streak reminders' and you STILL get streak reminders"
+      ],
+      "suggested_approach": "Implement granular notification controls with proper backend validation to ensure settings are respected."
+    },
+    {
+      "pain": "Restaurant database has poor coverage outside major cities",
+      "opportunity": "Expand restaurant database coverage to include establishments in smaller cities and international markets",
+      "count": 4,
+      "severity": "High",
+      "impact_score": 7,
+      "example_quotes": [
+        "I live in a small city so there's probably only like 50-80 restaurants but this app only shows 7 locations",
+        "only works for about a dozen cities"
+      ],
+      "suggested_approach": "Integrate with multiple restaurant data sources and enable user-contributed additions to expand coverage organically."
+    },
+    {
+      "pain": "Cannot search restaurants by city for travel planning",
+      "opportunity": "Add city/location search functionality so users can discover restaurants before traveling",
+      "count": 4,
+      "severity": "High",
+      "impact_score": 7,
+      "example_quotes": [
+        "I'm heading to SD and wanted some food recommendations... Why can't you simply search a city and get ratings?",
+        "Please let me search by neighborhoods in New York"
+      ],
+      "suggested_approach": "Build location-based search with city, neighborhood, and address-level granularity for travel use cases."
+    },
+    {
+      "pain": "Invite system is buggy - accepted invites don't unlock features",
+      "opportunity": "Fix invite tracking system to properly credit users when their invitations are successful",
+      "count": 4,
+      "severity": "High",
+      "impact_score": 7,
+      "example_quotes": [
+        "I have invited friends, and they used my download link, but after clicking 'Unlock' for the features I still don't have it",
+        "tried referring again with text and link and both give errors when they click on the link"
+      ],
+      "suggested_approach": "Rebuild invitation tracking with proper validation and real-time status updates for users."
+    },
+    {
+      "pain": "Rating system forces comparison between incomparable restaurant types",
+      "opportunity": "Create category-based ranking systems so users can compare restaurants within similar types",
+      "count": 8,
+      "severity": "Medium",
+      "impact_score": 7,
+      "example_quotes": [
+        "I don't like how it makes you compare restaurants that have nothing in common. Why would I compare a Mexican restaurant to a barbecue joint?",
+        "Comparing a pizza restaurant to a steak restaurant makes no sense"
+      ],
+      "suggested_approach": "Implement restaurant categorization with optional within-category comparisons alongside overall rankings."
+    },
+    {
+      "pain": "Cannot manually set custom numerical ratings for restaurants",
+      "opportunity": "Allow users to assign custom numerical scores alongside or instead of comparative rankings",
+      "count": 6,
+      "severity": "Medium",
+      "impact_score": 6,
+      "example_quotes": [
+        "I love beli but I hate that the rankings are based on comparison to other places!!! I should be able to rank the restaurant with my own number.",
+        "An app for reviews that does not let me make my own rating is wild to me"
+      ],
+      "suggested_approach": "Add optional numerical rating input alongside comparative rankings to give users more control."
+    },
+    {
+      "pain": "Cannot add restaurants that aren't already in the database",
+      "opportunity": "Enable user-generated restaurant additions with moderation to expand coverage organically",
+      "count": 4,
+      "severity": "Medium",
+      "impact_score": 6,
+      "example_quotes": [
+        "I went to China for a week and 0% of the places I went to were on here. It's fine if no one else using Beli reviews these places but why can't I review them?",
+        "Is there a way we can add restaurants to the list? I've looked, but couldn't find a way to do it"
+      ],
+      "suggested_approach": "Build user submission flow with photo verification and community moderation for new restaurant additions."
+    },
+    {
+      "pain": "App lacks comprehensive map view for restaurant discovery",
+      "opportunity": "Implement a discovery map view that shows all restaurants with ratings in any geographic area",
+      "count": 5,
+      "severity": "Medium",
+      "impact_score": 6,
+      "example_quotes": [
+        "Why don't they have a map view?",
+        "I just want a map of restaurants near me and somehow that is not offered"
+      ],
+      "suggested_approach": "Create a comprehensive map discovery feature showing all restaurants in an area with filtering options."
+    },
+    {
+      "pain": "Rating flow requires too many clicks and screens making it inefficient",
+      "opportunity": "Streamline the rating process to a single screen with quick rating options",
+      "count": 3,
+      "severity": "High",
+      "impact_score": 6,
+      "example_quotes": [
+        "Why is it so many clicks/screens to rate a place",
+        "why is there an annoying screen prompting me to share after EVERY SINGLE RATING?"
+      ],
+      "suggested_approach": "Redesign rating flow as a single-screen experience with optional detailed input for power users."
+    },
+    {
+      "pain": "Multi-dimensional rating system missing for atmosphere, service, and food quality",
+      "opportunity": "Implement rating system allowing users to rate different aspects of restaurant experience separately",
+      "count": 2,
+      "severity": "Medium",
+      "impact_score": 5,
+      "example_quotes": [
+        "people tend to think of atmosphere, service, and quality of food and drink as the three primary components when making a decision. Beli does not allow for ratings of these elements"
+      ],
+      "suggested_approach": "Add optional detailed rating breakdown for food, service, and atmosphere alongside overall score."
+    },
+    {
+      "pain": "App lacks dark mode support causing eye strain",
+      "opportunity": "Implement dark mode theme option to improve user experience and reduce eye strain",
+      "count": 3,
+      "severity": "Low",
+      "impact_score": 4,
+      "example_quotes": [
+        "Every update is allegedly a UX update but still yet no dark mode",
+        "Also, a darker mode would be most useful. The bright white is strenuous on the eyes"
+      ],
+      "suggested_approach": "Add system-responsive dark mode toggle in settings with proper contrast ratios for accessibility."
+    }
+  ],
+  "competitors": {
+    "mentions": [
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "The idea is great creating a more modern/social aspect to yelp.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature overlap",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "You can do everything this app does on Google maps.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "data import",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This app works great and I love that it imported my lists from Google Maps",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Reviews",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "it looks like these developers have turned Google Reviews into a strava type of app. Totally unnecessary since Google is already a reliable social platform connected to your email.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Letterboxd",
+        "context": "comparison of clout/success",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "you'll realize why this app doesn't have Letterboxd level clout",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Duolingo",
+        "context": "comparison of notification annoyance",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "The only streak I care about less than yours is the one with the manipulative language owl",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This beats Yelp in terms of ratings. There's something clarifying in having to choose how good a restaurant is compared to another one that you've visited.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I cannot tolerate Yelp any longer and Beli appeared to be another option\u2026.but multiple days in and attempting to check off all of their tasks in order to even gain access to reviews or user notes is quite daunting.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Downloaded after NYT article said it was a Yelp killer. Sadly, it definitely isn't\u2026",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "More functional than yelp, google reviews, anything else.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Reviews",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "More functional than yelp, google reviews, anything else.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "BeReal",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I'm gonna start this off by saying this is probably one of my favorite new social media's out of the new ones like BeReal, Lapse, ect. It's a great app, I see it topping yelp for relevance in the food/restaurant industry.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Lapse",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I'm gonna start this off by saying this is probably one of my favorite new social media's out of the new ones like BeReal, Lapse, ect. It's a great app, I see it topping yelp for relevance in the food/restaurant industry.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I see it topping yelp for relevance in the food/restaurant industry.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I recently started using Google Maps but this is the upgrade to that. I'm obsessed and looking forward to how this app develops.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "map app",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Why should I create an account, give you my phone number and email, enable background app refresh, live updates, more frequent live updates, etc. just to see reviews of restaurants? You're out of your mind giving this company so much access and time investment just to see what every map app does already.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Spotify",
+        "context": "feature_comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "They have some sort of mid year and annual Spotify wrapped-esque food recap which I love",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "My friend shared this app with me when I expressed to her that I enjoy reviewing on Yelp but this weirdo app is not that. I don't understand the point. More of a food social network ? That only works if you have friends ? I truly am perplexed. Anyway didn't want to figure it out or force people on to an app. I'll continue to enjoy Yelp.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "when looking at restaurant details, a picture of the restaurant itself (not just the food) would be greatly appreciated (maybe scraped from google maps)",
+        "feature_gap": "Restaurant photos scraped from Google Maps for verification"
+      },
+      {
+        "competitor": "Google",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I understand that you wanna have a social network, but you also have to add some value in this place is no better than Google.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "comparison - user finds Beli more reliable for reviews",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "More reliable reviews than Google Maps or Yelp.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison - user finds Beli more reliable for reviews",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "More reliable reviews than Google Maps or Yelp.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google maps",
+        "context": "comparison - user switched from Google Maps to Beli for restaurant reviews",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "After years of saving restaurants and writing reviews on Google maps here's an app that uses that info to help me find and share finds!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google or Apple Maps",
+        "context": "comparison - user finds Beli's color coding easier to navigate",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Color coding a map easily to figure out which restaurants/bars are good/mid/bad is so much easier to navigate than Google or Apple Maps.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Pinterest",
+        "context": "comparison - user finds Beli more fun than Pinterest",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I recently have more fun on Beli than Pinterest or Instagram!!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Instagram",
+        "context": "comparison - user finds Beli more fun than Instagram",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I recently have more fun on Beli than Pinterest or Instagram!!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "yelp",
+        "context": "comparison - user finds Beli better than Yelp for finding restaurants",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Apps like yelp or even maps apps can be kinda weird when trying to find restaurants near me. Beli is pretty good about picking good places indiscriminately for me",
+        "feature_gap": null
+      },
+      {
+        "competitor": "maps apps",
+        "context": "comparison - user finds Beli better than maps apps for finding restaurants",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Apps like yelp or even maps apps can be kinda weird when trying to find restaurants near me. Beli is pretty good about picking good places indiscriminately for me",
+        "feature_gap": null
+      },
+      {
+        "competitor": "google maps",
+        "context": "comparison - user finds Google Maps more user friendly than Beli",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I love the concept but I find google maps to be more user friendly.",
+        "feature_gap": "better user interface and ability to see all categories at once on map"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "user seeking alternative to Google Maps",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Looking for a better alternative to Google Maps and Yelp now that Foursquare is shutting down. This app is not it.",
+        "feature_gap": "simple map with ratings for discovery"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "user seeking alternative to Yelp",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Looking for a better alternative to Google Maps and Yelp now that Foursquare is shutting down. This app is not it.",
+        "feature_gap": "simple map with ratings for discovery"
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "user mentions Foursquare shutting down as reason for seeking alternatives",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Looking for a better alternative to Google Maps and Yelp now that Foursquare is shutting down. This app is not it.",
+        "feature_gap": "simple map with ratings for discovery"
+      },
+      {
+        "competitor": "Goodreads",
+        "context": "user expected Beli to be more like Goodreads",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I just joined and was hoping that it would be more like Goodreads.",
+        "feature_gap": "simpler interface for marking restaurants as 'want to try'"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "As an avid Yelp list maker (but rare reviewer of restaurants), beli allows me to keep track of all the restaurants I've gone to in different cities.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Looking through pictures is a pain, when I can't look at the food properly in the zoom. Might as well return to Yelp \ud83e\udd37\u200d\u2642\ufe0f",
+        "feature_gap": "Better photo viewing/zoom functionality"
+      },
+      {
+        "competitor": "Instagram",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "While I've never been one to review establishments, the social media/insta feel of reviewing make me more inclined to partake.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Instagram or Twitter",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "To be able to share the places I eat at, along with pictures and reviews as if I was using Instagram or Twitter",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp/Google Reviews",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Integration with Yelp/Google Reviews. If I already looked up the Yelp review and gave it a rating, it can be a pa",
+        "feature_gap": "Integration with existing Yelp/Google Reviews and ratings"
+      },
+      {
+        "competitor": "Google",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Never reviewed an app before - but deeply annoyed by the fact that there aren't restaurant ratings (as google does).",
+        "feature_gap": "Restaurant ratings like Google provides"
+      },
+      {
+        "competitor": "Google or Yelp",
+        "context": "replacement",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "That would help to completely eliminate the need to look on google or yelp for new places!!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Sheets and Maps",
+        "context": "replacement",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This is exactly what I was looking for to replace my google sheets and maps.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Apple Maps",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "would love to have a feature where you can search other restaurants through a visual map feature (sort of like how you can on apple maps)",
+        "feature_gap": "Visual map search feature like Apple Maps"
+      },
+      {
+        "competitor": "Notes app",
+        "context": "replacement",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I've been keeping restaurants and their associated foods in my notes app forever and then my friend shared this app prior to my NYC foodie adventure",
+        "feature_gap": null
+      },
+      {
+        "competitor": "iPhone notes app",
+        "context": "replacement",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I was using the archaic iPhone notes app to track all the restaurants that I had visited and wanted to visit, until I came across this beauty of an app.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Excel database",
+        "context": "replacement",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I have had an excel database for a while now to track my restaurant experiences, but it was always so cumbersome to add new restaurants and share it with others. But Beli makes all that so simple!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "If you guys want to grow as big as Yelp, OpenTable, Resy, etc you need the consumer to ACTUALLY be able to use the app.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "OpenTable",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "If you guys want to grow as big as Yelp, OpenTable, Resy, etc you need the consumer to ACTUALLY be able to use the app.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Resy",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "If you guys want to grow as big as Yelp, OpenTable, Resy, etc you need the consumer to ACTUALLY be able to use the app.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "competitive threat",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "yelp better sleep with one eye open",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "feature gap",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "apps like yelp are missing out on th",
+        "feature_gap": "halal/kosher restaurant labeling"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "preference",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Would rather save places in google maps",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I love that I can track the restaurants I try & I love that it's not super well known like yelp or four square bc ppl be stalkers",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I love that I can track the restaurants I try & I love that it's not super well known like yelp or four square bc ppl be stalkers",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "feature gap",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "the thing I like about yelp is I can search by restaurant cuisine, price range, etc.",
+        "feature_gap": "search by cuisine, price range, and other filters"
+      },
+      {
+        "competitor": "Pinterest",
+        "context": "feature comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Like Pinterest",
+        "feature_gap": "save according to filters"
+      },
+      {
+        "competitor": "Untappd",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "It's like Untappd, but for restaurants instead of beer and with an infinitely better UI.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "switch from",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Before then, the only options to track restaurants were Yelp and Foursquare, which don't have the \"note\" function that Beli does.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "switch from",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Before then, the only options to track restaurants were Yelp and Foursquare, which don't have the \"note\" function that Beli does.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "In my mind it combines the public rankings of an app like Yelp and the private rankings I have on my notes app.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps lists",
+        "context": "switch from",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I've been using Google Maps lists all this time and it's been hard to keep track of.",
+        "feature_gap": "ability to add lists/lists with preset filters for easy sharing"
+      },
+      {
+        "competitor": "Evernote Food",
+        "context": "switch from",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I've used Evernote Food, Foursquare, Gowalla and more. This looks to be a great replacement",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "switch from",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I've used Evernote Food, Foursquare, Gowalla and more. This looks to be a great replacement",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Gowalla",
+        "context": "switch from",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I've used Evernote Food, Foursquare, Gowalla and more. This looks to be a great replacement",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "As a Yelp Elite five years running, this is a really cool, easy, and interesting way to rate and find restaurants",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Map lists",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This app is already much better than google map lists as it makes restaurant reviews social and has a better UI",
+        "feature_gap": "ability to import notes from google list export data"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I mostly use Yelp to find restaurants, but Yelp's bookmarking capabilities are a joke.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "switch from",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I currently tag tons of restaurants and bars on google maps, but it's super hard to organize and categorize them so this app has been amazing for that!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Similar to Google maps or Yelp it would help me find places to",
+        "feature_gap": "seeing all restaurants which have been rated on a map"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "feature comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Similar to Google maps or Yelp it would help me find places to",
+        "feature_gap": "seeing all restaurants which have been rated on a map"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This app is like yelp but if it is more personalized towards you rather than everyone which I like.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Notes app",
+        "context": "switch from",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I had been on an antiquated notes app for years which seems like the stone ages compared to Beli.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Apple Note",
+        "context": "switch from",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This is exactly what I have been searching for to convert my Apple Note into something more searchable!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I previously used Google Maps to keep track of restaurants, but Beli makes it so much easier to catalogue where I've been and the ranking is much more helpful than I realized.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Notes app",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I had been dying to find a way to keep track of my food experiences and had resorted to a list in my notes app, which was really bare bones. This app is exactly what I was looking for.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I don't want to use Apple map",
+        "feature_gap": "Integration with Google Maps for directions instead of Apple Maps"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "My only regret is I wish it was in existence sooner so I don't have to go through all my yelp check ins and bookmarks to transfer my thoughts!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I used to track restaurants in google maps but Beli easily blows that out of the water.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Goodreads",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This is the goodreads for resteraunts & i LOVE IT",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps, Yelp, Instagram",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "If google maps, yelp and instagram had a baby. Highly recommend!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Notes app",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This app is a huge upgrade from my Notes app as a way to keep track of restaurants I would like to try someday, and remember what I liked about the ones I have been to.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Letterboxd",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "loved the recs from their IG account, and didn't know they were going to launch an app too. was excited to try it out. So far love it and the ranking concept - hard to decipher what \"4 stars\" on traditional review systems really means to ME.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Notes app",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Finally - I don't need to keep lists on Notes to figure out where I want to try for dinner!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I rarely look at restaurant reviews on Yelp anymore because they are so meaningless to me. Beli lets me rank my preferences against my preferences so I can create ranks that actually mean something!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Notes app",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "My boyfriend and I love trying new places and I used to keep a list in my notes but Beli has made it so much easier",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "After giving up on Yelp and using exclusively Google maps to find new restaurants, Beli has changed how I go about finding recommendations",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "switch",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "After giving up on Yelp and using exclusively Google maps to find new restaurants, Beli has changed how I go about finding recommendations",
+        "feature_gap": null
+      },
+      {
+        "competitor": "0-5 star rating systems",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "finally there's an alternative to the myriad 0-5 star systems out there and I've already found most of my favorite recent discoveries via Beli",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Notes app",
+        "context": "switch",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Finally a reason to delete the hundreds of notes full of restaurants in my phone!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature integration",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "the fact that you can import your google maps pins shows that the developers clearly know they're targeting: it's a superb idea",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Michelin",
+        "context": "feature gap",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "would be amazing if Beli could source data from Michelin on Michelin Stars, Bib Gourmands and other awards that they discern",
+        "feature_gap": "Integration with Michelin ratings and awards data"
+      },
+      {
+        "competitor": "legacy competition like hemp and trip advisor",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "strips all the noise of all of the legacy competition like hemp and trip advisor while also surpassing even Google in qualitive value",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "surpassing even Google in qualitive value as far as I'm concerned",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This app is everything Yelp wants to be",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "feature comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "When selecting photos to attach, Yelps gives you a selection of photos selected at the location first, which is very convenient. Seems like a must-have for Beli",
+        "feature_gap": "Location-based photo suggestions when attaching photos"
+      },
+      {
+        "competitor": "iPhone list",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This is so much better than my iPhone list!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "usually I just end up pinning them on Google maps and leaving reviews through Google. This is a fun way to share to my friends!!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "usually I just end up pinning them on Google maps and leaving reviews through Google. This is a fun way to share to my friends!!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "user recommends sticking to Google Maps instead of Beli",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "just stick to Google maps. this app is just annoying to use",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Letterboxd",
+        "context": "user wanted something like Letterboxd for restaurants",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I just wanted something like letterboxd for restaurants, but forcing me to invite friends to the app to make it remotely functional just means I'm passing the curse on to the next person",
+        "feature_gap": "restaurant rating system without forced friend invitations"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "user will continue using Google Maps instead of Beli",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "No thanks, I'll continue to use Google Ma",
+        "feature_gap": "ability to use app without phone number requirement"
+      },
+      {
+        "competitor": "Facebook",
+        "context": "comparison to Facebook's platform approach",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "More of a facebook like platform than a restaurant review site",
+        "feature_gap": "simple restaurant review functionality without social platform features"
+      },
+      {
+        "competitor": "Facebook",
+        "context": "app wants to be like Facebook",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "it wants to be Facebook so bad",
+        "feature_gap": "simple restaurant checking without social media features"
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "comparison saying Foursquare was better",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Foursquare was much more fun and ethical in its social impact",
+        "feature_gap": "more fun and ethical social features"
+      },
+      {
+        "competitor": "Google",
+        "context": "prefers Google's reviewing system",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Prefer Google's reviewing system much more",
+        "feature_gap": "star-based reviewing system instead of ranking"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "recommends sticking to Google Maps",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Stick to Google maps",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "describes Beli as trendy version of Yelp but worse",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "like a trendy version of yelp but imagine no map, no suggestions when you type in a city or very hard to find",
+        "feature_gap": "map view and city search suggestions"
+      },
+      {
+        "competitor": "Letterboxd",
+        "context": "suggests Beli should make UI more like Letterboxd",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "as much as I hate to say it they need to letterboxd the UI a little bit more, add dark mode",
+        "feature_gap": "better UI design and dark mode like Letterboxd"
+      },
+      {
+        "competitor": "Farmville",
+        "context": "comparison of friend recruitment to Farmville",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "the emphasis on recruiting friends is very Farmville",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Amway",
+        "context": "comparison of friend invitation system to MLM scheme",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Try to make it a little less like Amway",
+        "feature_gap": "remove MLM-like friend invitation requirements"
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "How is it better than 4 square city search which already gamified restaurant listings and allowed organized lists, and still was discontinued.",
+        "feature_gap": "Open API for data export, import from Google Maps and Yelp favorites"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "replacement",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I replaced 4 square with Google maps (my places).",
+        "feature_gap": "Open API for data export, import from Google Maps and Yelp favorites"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "import request",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "it would help to import Google myplaces kmls or tagged locations, as well as yelp favorites.",
+        "feature_gap": "Import from Yelp favorites"
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "replacement",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "quite good as a rating app(closest ive found for a foursquare replacement)",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "alternative",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "it's a nice alternative to Yelp and maps.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "alternative",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "it's a nice alternative to Yelp and maps.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Just use Google maps, it's ten times more functional.",
+        "feature_gap": "Better map functionality showing restaurants near you"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "differentiation struggle",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "don't see how it differs enough from Google Maps",
+        "feature_gap": "Import existing Google Maps lists and reviews"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "frustration with alternatives",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I tried yelp and Google maps to keep track of my favorite restaurants but they each lacked things which was frustrating",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "frustration with alternatives",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I tried yelp and Google maps to keep track of my favorite restaurants but they each lacked things which was frustrating",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Letterboxd",
+        "context": "feature request",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "Need to be able to read the reviews of other people who went there (copy letterboxd)",
+        "feature_gap": "Ability to read other users' reviews"
+      },
+      {
+        "competitor": "Google Reviews",
+        "context": "fallback option",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "else I have to use Google reviews",
+        "feature_gap": "User review reading functionality"
+      },
+      {
+        "competitor": "DoorDash",
+        "context": "feature suggestion",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "include a door dash type menu from each restaurant to make favorite dish marking and photo adding easier",
+        "feature_gap": "Menu integration for easier dish marking"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "superiority claim",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "love this app - so much better than yelp",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Eater",
+        "context": "switch",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Like the concept and want to use but uninstalled will use Eater",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "While I love this app and is a much better experience than Yelp",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "If you are a passionate foodie, you know that Google Maps simply does not cut it. This is the answer to all your problems.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google doc",
+        "context": "replacement",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "So much better than the Google doc I was constantly having to update.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "google maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Still really fun and better than google maps.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "as a culinary student with the familiar huge Google maps (or mental) list of places to go \u2014 this app is genuinely a game changer",
+        "feature_gap": "Better organization and ranking of restaurant lists"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "It may sound dramatic but it's honestly unusable for me with the current rating system. I can't reasonably have restaurants I would consider to be a 9 or 10 be something like a 6 or 7 just because I have many 9's and some 9's are higher d",
+        "feature_gap": "Ability to add custom numerical ratings and import places from Google Maps"
+      },
+      {
+        "competitor": "Facebook",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "like Facebook and Yelp had a baby. love it",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "like Facebook and Yelp had a baby. love it",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google maps",
+        "context": "feature_gap",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "This is all the features I was hoping Google maps would eventually implement.",
+        "feature_gap": "Restaurant ranking and recommendation features"
+      },
+      {
+        "competitor": "gmaps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Great concept don't know who's doing this better right now. Definitely not too redundant with gmaps",
+        "feature_gap": null
+      },
+      {
+        "competitor": "letterbox",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Feel like this sub is not a fan but I think it's the closest to letterbox for food out there.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "google maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I feel like the ratings are a bit more accurate / objective since most people tend to rate 7/10 as average and give 10/10s way too easily. Found it's more accurate than google ma",
+        "feature_gap": null
+      },
+      {
+        "competitor": "rym",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Completely agree, you could do a much better job at rating food spots than beli. rym, letterboxed do it way better for music and movies.",
+        "feature_gap": "Better rating system like RateYourMusic"
+      },
+      {
+        "competitor": "letterboxed",
+        "context": "comparison",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Completely agree, you could do a much better job at rating food spots than beli. rym, letterboxed do it way better for music and movies.",
+        "feature_gap": "Better rating system like Letterboxd"
+      },
+      {
+        "competitor": "Google",
+        "context": "comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "Beli and Google are where I start",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "As a restaurant owner, I've noticed Beli actually gets more reviews than the sum of Google and Resy",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Resy",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "As a restaurant owner, I've noticed Beli actually gets more reviews than the sum of Google and Resy",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Foursquare",
+        "context": "replacement",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I was a hardcore Foursquare user because it's restaurant scores were way more reliable than Google Maps or Yelp, but after Foursquare shut down, I've been using Beli.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I was a hardcore Foursquare user because it's restaurant scores were way more reliable than Google Maps or Yelp, but after Foursquare shut down, I've been using Beli.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I was a hardcore Foursquare user because it's restaurant scores were way more reliable than Google Maps or Yelp, but after Foursquare shut down, I've been using Beli.",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Instagram",
+        "context": "comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I love Beli because it's not just influencer-promoted places like instagram",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Yelp",
+        "context": "usage alongside",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I use Beli for lists and yelp/google maps for discovery",
+        "feature_gap": "discovery features"
+      },
+      {
+        "competitor": "Google Maps",
+        "context": "usage alongside",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "positive",
+        "verbatim": "I use Beli for lists and yelp/google maps for discovery",
+        "feature_gap": "discovery features and maps functionality"
+      },
+      {
+        "competitor": "weshouldmeet.xyz",
+        "context": "alternative recommendation",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "The results are waayyy better than Beli (ranked by Google ratings and based on actual cuisine, not just n",
+        "feature_gap": "better search results and cuisine-based ranking"
+      },
+      {
+        "competitor": "bites.nyc",
+        "context": "alternative platform",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "I built bites.nyc, an app for you to rate, rank and share specific food items, not restaurants",
+        "feature_gap": "rating specific food items vs restaurants"
+      },
+      {
+        "competitor": "Google ratings",
+        "context": "comparison for discovery",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "I thought Beli might be that but it's kind of woefully under-developed when it comes to creating a useful list of average ratings. Is Google ratings the go to?",
+        "feature_gap": "useful average ratings system"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "comparison for discovery",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "yelp is full of fake reviews and reviews from folks I might not trust that I will agree with. Beli? I'm sorry maybe I'm just to old but I find it annoyingly unuseful!",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Infatuation",
+        "context": "comparison for discovery",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "negative",
+        "verbatim": "Infatuation I don't know who the writers are for that but mostly if a restaurant isn't in Brooklyn or Astoria or one of the cool Instagram worthy restaurant they don't seem to give just truly good resta",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Feast app",
+        "context": "alternative app",
+        "sentiment_toward_competitor": "positive",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "My friend and I created this app called Feast that combines the social aspect of Instagram with the utility of a review platform like Yelp/Google",
+        "feature_gap": "social features combined with review utility"
+      },
+      {
+        "competitor": "Yelp",
+        "context": "feature comparison",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "combines the social aspect of Instagram with the utility of a review platform like Yelp/Google",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Michelin guide",
+        "context": "usage alongside",
+        "sentiment_toward_competitor": "neutral",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "I use beli, and also check the Michelin guide (both of these are hit or miss)",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Google reviews",
+        "context": "digital fatigue comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "Between google reviews, yelp, eater, infatuation, tik tok, IG and AI to the AI, I can't tell what's really good anymore",
+        "feature_gap": null
+      },
+      {
+        "competitor": "Eater",
+        "context": "digital fatigue comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "Between google reviews, yelp, eater, infatuation, tik tok, IG and AI to the AI, I can't tell what's really good anymore",
+        "feature_gap": null
+      },
+      {
+        "competitor": "TikTok",
+        "context": "digital fatigue comparison",
+        "sentiment_toward_competitor": "negative",
+        "sentiment_toward_beli": "neutral",
+        "verbatim": "Between google reviews, yelp, eater, infatuation, tik tok, IG and AI to the AI, I can't tell what's really good anymore",
+        "feature_gap": null
+      }
+    ],
+    "summary": [
+      {
+        "name": "Yelp",
+        "mention_count": 33,
+        "user_perception": "Users see Yelp as the established incumbent with unreliable reviews and poor bookmarking capabilities, though some appreciate its search filters and comprehensive data.",
+        "beli_advantages": [
+          "More reliable and personalized reviews",
+          "Better ranking system that compares restaurants against each other",
+          "Superior bookmarking and tracking capabilities",
+          "Social aspect makes reviewing more engaging",
+          "Note-taking functionality for restaurants"
+        ],
+        "beli_gaps": [
+          "Search by cuisine, price range, and other filters",
+          "Location-based photo suggestions when attaching photos",
+          "Integration with existing Yelp reviews and ratings",
+          "Halal/kosher restaurant labeling"
+        ],
+        "key_quotes": [
+          "This beats Yelp in terms of ratings. There's something clarifying in having to choose how good a restaurant is compared to another one that you've visited.",
+          "I rarely look at restaurant reviews on Yelp anymore because they are so meaningless to me. Beli lets me rank my preferences against my preferences so I can create ranks that actually mean something!"
+        ]
+      },
+      {
+        "name": "Google Maps",
+        "mention_count": 21,
+        "user_perception": "Users view Google Maps as functional but limited for restaurant organization and discovery, though they appreciate its comprehensive data and user-friendly interface.",
+        "beli_advantages": [
+          "Better restaurant organization and categorization",
+          "Color-coded map visualization for restaurant quality",
+          "Superior tracking and list management",
+          "More reliable reviews than Google Maps",
+          "Imported user's existing Google Maps data seamlessly"
+        ],
+        "beli_gaps": [
+          "Restaurant photos scraped from Google Maps for verification",
+          "Better user interface and ability to see all categories at once on map",
+          "Visual map search feature like Apple Maps",
+          "Integration with Google Maps for directions instead of Apple Maps",
+          "Seeing all restaurants which have been rated on a map"
+        ],
+        "key_quotes": [
+          "I recently started using Google Maps but this is the upgrade to that. I'm obsessed and looking forward to how this app develops.",
+          "Color coding a map easily to figure out which restaurants/bars are good/mid/bad is so much easier to navigate than Google or Apple Maps."
+        ]
+      },
+      {
+        "name": "Notes App",
+        "mention_count": 9,
+        "user_perception": "Users see basic notes apps as outdated and cumbersome tools they were forced to use before finding Beli for restaurant tracking.",
+        "beli_advantages": [
+          "Searchable and organized restaurant database",
+          "Social sharing capabilities",
+          "Visual interface with photos and ratings",
+          "Eliminates need for manual list maintenance"
+        ],
+        "beli_gaps": [],
+        "key_quotes": [
+          "I had been dying to find a way to keep track of my food experiences and had resorted to a list in my notes app, which was really bare bones. This app is exactly what I was looking for.",
+          "Finally a reason to delete the hundreds of notes full of restaurants in my phone!"
+        ]
+      },
+      {
+        "name": "Google Reviews",
+        "mention_count": 4,
+        "user_perception": "Users see Google Reviews as an established platform but prefer Beli's more personalized and social approach to restaurant reviews.",
+        "beli_advantages": [
+          "More functional and reliable reviews",
+          "Social media-style interface makes reviewing more engaging"
+        ],
+        "beli_gaps": [
+          "Integration with existing Google Reviews and ratings",
+          "Restaurant ratings like Google provides"
+        ],
+        "key_quotes": [
+          "More functional than yelp, google reviews, anything else.",
+          "it looks like these developers have turned Google Reviews into a strava type of app."
+        ]
+      },
+      {
+        "name": "Instagram",
+        "mention_count": 4,
+        "user_perception": "Users appreciate Instagram's social media feel and visual approach, which they see reflected positively in Beli's design.",
+        "beli_advantages": [
+          "Purpose-built for restaurant reviews rather than general social media",
+          "More fun and engaging than general social platforms"
+        ],
+        "beli_gaps": [],
+        "key_quotes": [
+          "While I've never been one to review establishments, the social media/insta feel of reviewing make me more inclined to partake.",
+          "I recently have more fun on Beli than Pinterest or Instagram!!"
+        ]
+      },
+      {
+        "name": "Foursquare",
+        "mention_count": 4,
+        "user_perception": "Users remember Foursquare as a useful restaurant tracking app that has shut down, leaving them seeking alternatives like Beli.",
+        "beli_advantages": [
+          "Note-taking functionality that Foursquare lacked",
+          "Modern interface and social features"
+        ],
+        "beli_gaps": [
+          "Simple map with ratings for discovery"
+        ],
+        "key_quotes": [
+          "Looking for a better alternative to Google Maps and Yelp now that Foursquare is shutting down.",
+          "Before then, the only options to track restaurants were Yelp and Foursquare, which don't have the 'note' function that Beli does."
+        ]
+      },
+      {
+        "name": "Letterboxd",
+        "mention_count": 3,
+        "user_perception": "Users see Letterboxd as the gold standard for entertainment tracking and wish Beli could achieve similar success and simplicity for restaurants.",
+        "beli_advantages": [
+          "Ranking system is more meaningful than traditional star ratings"
+        ],
+        "beli_gaps": [
+          "Restaurant rating system without forced friend invitations",
+          "Simpler interface for marking restaurants as 'want to try'"
+        ],
+        "key_quotes": [
+          "you'll realize why this app doesn't have Letterboxd level clout",
+          "I just wanted something like letterboxd for restaurants, but forcing me to invite friends to the app to make it remotely functional just means I'm passing the curse on to the next person"
+        ]
+      },
+      {
+        "name": "Goodreads",
+        "mention_count": 2,
+        "user_perception": "Users see Goodreads as an ideal model for tracking and rating content, wanting Beli to be the restaurant equivalent.",
+        "beli_advantages": [
+          "Successfully applies the Goodreads model to restaurants"
+        ],
+        "beli_gaps": [
+          "Simpler interface for marking restaurants as 'want to try'"
+        ],
+        "key_quotes": [
+          "This is the goodreads for resteraunts & i LOVE IT",
+          "I just joined and was hoping that it would be more like Goodreads."
+        ]
+      }
+    ]
+  },
+  "meta": {
+    "total_reviews": 831,
+    "generated_at": "2026-03-11T21:24:43.827620"
+  }
+}
